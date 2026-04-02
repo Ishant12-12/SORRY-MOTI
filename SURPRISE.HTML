@@ -1,0 +1,238 @@
+<html>
+
+<head>
+
+<title>Sorry Moti ❤️</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+
+background:#ffd1dc;
+font-family:Arial;
+text-align:center;
+height:100vh;
+overflow:hidden;
+
+}
+
+.box{
+
+background:white;
+width:90%;
+max-width:450px;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+}
+
+h2{
+
+color:#ff4d88;
+
+}
+
+button{
+
+padding:12px 30px;
+
+margin:15px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+}
+
+#yes{
+
+background:#ff4d88;
+
+color:white;
+
+}
+
+#no{
+
+background:#888;
+
+color:white;
+
+position:relative;
+
+}
+
+#message{
+
+display:none;
+
+font-size:20px;
+
+color:#ff4d88;
+
+margin-top:20px;
+
+white-space:pre-line;
+
+}
+
+.heart{
+
+position:absolute;
+
+font-size:20px;
+
+color:#ff4d88;
+
+animation: float 6s linear infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(100vh);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-10vh);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Will you forgive me? ❤️</h2>
+
+<button id="yes" onclick="showMessage()">Yes</button>
+
+<button id="no"
+onmouseover="moveButton()"
+ontouchstart="moveButton()"
+onclick="moveButton()"
+>No</button>
+
+<p id="message"></p>
+
+</div>
+
+<script>
+
+function moveButton(){
+
+var button=document.getElementById("no");
+
+var x=Math.random()*300;
+
+var y=Math.random()*300;
+
+button.style.position="absolute";
+
+button.style.left=x+"px";
+
+button.style.top=y+"px";
+
+}
+
+function showMessage(){
+
+var text="Sorry for what I did ❤️\n\nI truly didn't want to hurt you moti.\n\nI feel very sorry for not giving you time.\n\nYou are very special to me.\n\nThank you for being in my life 🥺❤️";
+
+var i=0;
+
+document.getElementById("message").innerHTML="";
+
+document.getElementById("message").style.display="block";
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("message").innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(typing,40);
+
+}
+
+else{
+
+setTimeout(finalScreen,800);
+
+}
+
+}
+
+typing();
+
+}
+
+function finalScreen(){
+
+document.querySelector(".box").innerHTML=
+
+"<h2>Thank you for forgiving me ❤️</h2><br><h3>I promise to do better 🥺</h3><br><h1>❤️</h1>";
+
+}
+
+function hearts(){
+
+var heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(function(){
+
+heart.remove();
+
+},6000);
+
+}
+
+setInterval(hearts,300);
+
+</script>
+
+</body>
+
+</html
